@@ -1,0 +1,27 @@
+{
+  "name": "difftron",
+  "version": "1.0.0",
+  "description": "diff tool based on Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romiogaku/difftron.git"
+  },
+  "keywords": [
+    "Electron",
+    "diff"
+  ],
+  "author": "romiogaku",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romiogaku/difftron/issues"
+  },
+  "homepage": "https://github.com/romiogaku/difftron#readme",
+  "devDependencies": {
+    "electron": "^1.4.4"
+  }
+}
