@@ -3,9 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <script>
+      if (!process.env.HOT) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '../dist/style.css';
+        document.write(link.outerHTML);
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
   </body>
-  <script src="../dist/bundle.js"></script>
+  <script>
+  {
+    const script = document.createElement('script');
+    const port = process.env.PORT || 3000;
+    script.src = (process.env.HOT) ? `http://localhost:${port}/dist/bundle.js` : '../dist/bundle.js';
+    document.write(script.outerHTML);
+  }
+</script>
 </html>

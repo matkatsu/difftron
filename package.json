@@ -4,8 +4,9 @@
   "description": "diff tool based on Electron",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "webpack",
+    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
+    "hot-server": "cross-env NODE_ENV=development node -r babel-register server.js",
+    "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main.development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,10 +25,40 @@
   "homepage": "https://github.com/romiogaku/difftron#readme",
   "devDependencies": {
     "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-webpack-loaders": "^0.8.0",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "concurrently": "^3.1.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.25.0",
+    "devtron": "^1.4.0",
     "electron": "^1.4.4",
-    "webpack": "^1.13.2"
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-import-resolver-webpack": "^0.6.0",
+    "eslint-loader": "^1.6.0",
+    "eslint-plugin-flowtype-errors": "^1.4.1",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-mocha": "^4.7.0",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-react": "^6.4.1",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.0",
+    "webpack-merge": "^0.15.0",
+    "webpack-validator": "^2.2.9"
   }
 }
