@@ -1,0 +1,9 @@
+.inputContainer {
+  display: flex;
+  height: 500px;
+}
+
+.outputContainer {
+  display: flex;
+  height: 100vh;
+}

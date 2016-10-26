@@ -20,11 +20,11 @@ export default validate(merge(baseConfig, {
   entry: [
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
     'babel-polyfill',
-    './App/index'
+    './App/index',
   ],
 
   output: {
-    publicPath: `http://localhost:${port}/dist/`
+    publicPath: `http://localhost:${port}/dist/`,
   },
 
   module: {
@@ -40,22 +40,22 @@ export default validate(merge(baseConfig, {
         test: /\.global\.css$/,
         loaders: [
           'style-loader',
-          'css-loader?sourceMap'
-        ]
+          'css-loader?sourceMap',
+        ],
       },
 
       {
         test: /^((?!\.global).)*\.css$/,
         loaders: [
           'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-        ]
-      }
-    ]
+          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+        ],
+      },
+    ],
   },
 
   eslint: {
-    formatter
+    formatter,
   },
 
   plugins: [
@@ -67,10 +67,10 @@ export default validate(merge(baseConfig, {
 
     // NODE_ENV should be production so that modules do not perform certain development checks
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
   ],
 
   // https://github.com/chentsulin/webpack-target-electron-renderer#how-this-module-works
-  target: 'electron-renderer'
+  target: 'electron-renderer',
 }));

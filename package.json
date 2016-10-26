@@ -63,6 +63,7 @@
     "webpack-validator": "^2.2.9"
   },
   "dependencies": {
-    "electron-debug": "^1.0.1"
+    "electron-debug": "^1.0.1",
+    "react-ace": "^3.6.1"
   }
 }
