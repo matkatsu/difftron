@@ -1,9 +1,14 @@
-.inputContainer {
+.container {
+  min-height: 100vh;
   display: flex;
-  height: 500px;
+  flex-direction: column;
 }
 
-.outputContainer {
+.inputWrapper {
+  flex: 1;
   display: flex;
-  height: 100vh;
+}
+
+.outputWrapper {
+  height: 200px;
 }

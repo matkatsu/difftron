@@ -5,12 +5,12 @@ import DiffResult from '../Components/DiffResult';
 import styles from './Styles/PresentationScreen.css';
 
 const PresentationScreen = () => (
-  <div className={styles.flexbox}>
-    <div className={styles.inputContainer}>
+  <div className={styles.container}>
+    <div className={styles.inputWrapper}>
       <InputLeft />
       <InputRight />
     </div>
-    <div className={styles.outputContainer}>
+    <div className={styles.outputWrapper}>
       <DiffResult />
     </div>
   </div>

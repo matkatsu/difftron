@@ -1,4 +1,4 @@
 .box {
   flex: 1;
-  background-color: #ffcc66;
+  border-top: dotted;
 }
