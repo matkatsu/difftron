@@ -35,7 +35,7 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
+    width: 1023,
     height: 600,
   });
 
@@ -44,6 +44,8 @@ app.on('ready', async () => {
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.show();
     mainWindow.focus();
+    // aceエディタ height100%指定時のレイアウト崩れ対策
+    mainWindow.setSize(1024, 600);
   });
 
   mainWindow.on('closed', () => {
