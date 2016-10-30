@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import configureStore from './Stores/Store';
 import PresentationScreen from './Containers/PresentationScreen';
 import './index.global.css';
+
+const store = configureStore();
 
 // rootコンポーネントがstateless-functionだとHMRが動かないバグ
 // https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md
@@ -16,6 +20,8 @@ class App extends Component {
 }
 
 render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('app')
 );

@@ -63,7 +63,11 @@
     "webpack-validator": "^2.2.9"
   },
   "dependencies": {
+    "diff": "^3.0.1",
     "electron-debug": "^1.0.1",
-    "react-ace": "^3.6.1"
+    "react-ace": "^3.6.1",
+    "react-redux": "^4.4.5",
+    "reduxsauce": "^0.2.0",
+    "seamless-immutable": "^6.3.0"
   }
 }
