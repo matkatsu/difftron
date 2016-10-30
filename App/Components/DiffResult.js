@@ -12,6 +12,7 @@ const DiffResult = () => (
       theme="solarized_light"
       name="DIFF_RESULT"
       width="100%"
+      height="300px"
       showPrintMargin={false}
     />
   </div>

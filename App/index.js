@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import PresentationScreen from './Containers/PresentationScreen';
+import './index.global.css';
 
 // rootコンポーネントがstateless-functionだとHMRが動かないバグ
 // https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md
