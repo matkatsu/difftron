@@ -6,15 +6,16 @@ import 'brace/theme/solarized_light';
 import AceEditor from 'react-ace';
 import styles from './Styles/InputLeft.css';
 
-const InputLeft = props => (
+const InputLeft = ({ onChange, value }) => (
   <div className={styles.box}>
     <AceEditor
       mode="javascript"
       theme="solarized_light"
-      onChange={props.onChange}
+      onChange={onChange}
       name="RIGHT_INPUT"
       width="100%"
       height="100%"
+      value={value}
       showPrintMargin={false}
       editorProps={{ $blockScrolling: true }}
     />
@@ -23,6 +24,7 @@ const InputLeft = props => (
 
 InputLeft.propTypes = {
   onChange: PropTypes.func.isRequired,
+  value: PropTypes.string,
 };
 
 export default InputLeft;

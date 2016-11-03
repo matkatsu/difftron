@@ -6,15 +6,11 @@ import DiffResult from '../Components/DiffResult';
 import styles from './Styles/PresentationScreen.css';
 import Actions from '../Actions/Creators';
 
-const handleChangeInput = (change, input) => {
-  change(input);
-};
-
-const PresentationScreen = ({ changeLeft, changeRight }) => (
+const PresentationScreen = ({ changeLeft, changeRight, left, right }) => (
   <div className={styles.container}>
     <div className={styles.inputWrapper}>
-      <InputLeft onChange={input => handleChangeInput(changeLeft, input)} />
-      <InputRight onChange={input => handleChangeInput(changeRight, input)} />
+      <InputLeft onChange={input => changeLeft(input)} value={left} />
+      <InputRight onChange={input => changeRight(input)} value={right} />
     </div>
     <div className={styles.outputWrapper}>
       <DiffResult />
@@ -25,11 +21,17 @@ const PresentationScreen = ({ changeLeft, changeRight }) => (
 PresentationScreen.propTypes = {
   changeLeft: PropTypes.func,
   changeRight: PropTypes.func,
+  left: PropTypes.string,
+  right: PropTypes.string,
 };
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => (
+  {
+    left: state.input.left,
+    right: state.input.right,
+  }
+);
 
-// dispatchは基本的にpropsで渡す
 const mapDispatchToProps = dispatch => (
   {
     changeLeft: input => dispatch(Actions.inputLeftChange(input)),
