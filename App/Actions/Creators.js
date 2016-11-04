@@ -7,8 +7,8 @@ const startup = () => ({ type: Types.STARTUP });
 const inputLeftChange = input => ({ type: Types.INPUT_LEFT_CHANGE, input });
 // rightのstateを更新
 const inputRightChange = input => ({ type: Types.INPUT_RIGHT_CHANGE, input });
-// stateの更新が終わったらoutput出力
-const outputDiffResult = () => ({ type: Types.OUTPUT_DIFF_RESULT });
+// diff出力
+const outputDiffResult = diff => ({ type: Types.OUTPUT_DIFF_RESULT, diff });
 
 /*
 アプリ内で有効なActions一覧

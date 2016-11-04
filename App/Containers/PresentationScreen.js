@@ -6,14 +6,14 @@ import DiffResult from '../Components/DiffResult';
 import styles from './Styles/PresentationScreen.css';
 import Actions from '../Actions/Creators';
 
-const PresentationScreen = ({ changeLeft, changeRight, left, right }) => (
+const PresentationScreen = ({ changeLeft, changeRight, left, right, diff }) => (
   <div className={styles.container}>
     <div className={styles.inputWrapper}>
       <InputLeft onChange={input => changeLeft(input)} value={left} />
       <InputRight onChange={input => changeRight(input)} value={right} />
     </div>
     <div className={styles.outputWrapper}>
-      <DiffResult />
+      <DiffResult value={diff} />
     </div>
   </div>
 );
@@ -23,12 +23,14 @@ PresentationScreen.propTypes = {
   changeRight: PropTypes.func,
   left: PropTypes.string,
   right: PropTypes.string,
+  diff: PropTypes.string,
 };
 
 const mapStateToProps = state => (
   {
     left: state.input.left,
     right: state.input.right,
+    diff: state.output.diff,
   }
 );
 
