@@ -6,11 +6,10 @@ export const INITIAL_STATE = immutable({
   diff: '',
 });
 
-const outputResult = (state, action) => {
+const outputResult = (state, action) =>
   state.merge({
     diff: action.diff,
   });
-};
 
 // ActionハンドラとActionTypesをマッピング
 const ACTION_HANDLERS = {

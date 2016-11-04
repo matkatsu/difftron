@@ -15,6 +15,7 @@ const DiffResult = ({ value }) => (
       height="300px"
       value={value}
       showPrintMargin={false}
+      editorProps={{ $blockScrolling: true }}
     />
   </div>
 );
