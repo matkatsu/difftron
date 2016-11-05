@@ -1,21 +1,19 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import SplitPane from 'react-split-pane';
 import InputLeft from '../Components/InputLeft';
 import InputRight from '../Components/InputRight';
 import DiffResult from '../Components/DiffResult';
-import styles from './Styles/PresentationScreen.css';
 import Actions from '../Actions/Creators';
 
 const PresentationScreen = ({ changeLeft, changeRight, left, right, diff }) => (
-  <div className={styles.container}>
-    <div className={styles.inputWrapper}>
+  <SplitPane split="horizontal" defaultSize="60%">
+    <SplitPane split="vertical" defaultSize="50%">
       <InputLeft onChange={input => changeLeft(input)} value={left} />
       <InputRight onChange={input => changeRight(input)} value={right} />
-    </div>
-    <div className={styles.outputWrapper}>
-      <DiffResult value={diff} />
-    </div>
-  </div>
+    </SplitPane>
+    <DiffResult value={diff} />
+  </SplitPane>
 );
 
 PresentationScreen.propTypes = {

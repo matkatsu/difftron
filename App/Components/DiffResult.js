@@ -3,21 +3,21 @@ import brace from 'brace';
 import 'brace/mode/javascript';
 import 'brace/theme/solarized_light';
 import AceEditor from 'react-ace';
-import styles from './Styles/DiffResult.css';
+import '../diff2html.global.css';
 
 const DiffResult = ({ value }) => (
-  <div className={styles.box}>
-    <AceEditor
-      mode="javascript"
-      theme="solarized_light"
-      name="DIFF_RESULT"
-      width="100%"
-      height="300px"
-      value={value}
-      showPrintMargin={false}
-      editorProps={{ $blockScrolling: true }}
-    />
-  </div>
+  // <div dangerouslySetInnerHTML={{ __html: value }}></div>
+  <AceEditor
+    mode="javascript"
+    theme="solarized_light"
+    name="DIFF_RESULT"
+    width="100%"
+    height="100%"
+    value={value}
+    showPrintMargin={false}
+    showGutter={false}
+    editorProps={{ $blockScrolling: true }}
+  />
 );
 
 DiffResult.propTypes = {
