@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Menu, shell } from 'electron';
 
 let mainWindow = null;
 
@@ -55,4 +55,98 @@ app.on('ready', async () => {
   if (process.env.NODE_ENV === 'development') {
     mainWindow.webContents.openDevTools();
   }
+
+  // menu
+  const template = [
+    {
+      label: 'View',
+      submenu: [
+        {
+          label: 'Language',
+          submenu: [
+            {
+              label: 'javascript',
+            },
+            {
+              label: 'html',
+            },
+          ],
+        },
+        {
+          label: 'Theme',
+          submenu: [
+            {
+              label: 'theme1',
+            },
+            {
+              label: 'theme2',
+            },
+          ],
+        },
+        {
+          label: 'DiffFormat',
+          submenu: [
+            {
+              label: 'unified',
+            },
+            {
+              label: 'html',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      role: 'window',
+      submenu: [
+        {
+          role: 'minimize',
+        },
+        {
+          role: 'close',
+        },
+      ],
+    },
+    {
+      role: 'help',
+      submenu: [
+        {
+          label: 'Learn More',
+          click() { shell.openExternal('https://github.com/romiogaku/difftron'); },
+        },
+      ],
+    },
+  ];
+
+  if (process.platform === 'darwin') {
+    template.unshift({
+      label: app.getName(),
+      submenu: [
+        {
+          role: 'about',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          role: 'hide',
+        },
+        {
+          role: 'hideothers',
+        },
+        {
+          role: 'unhide',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          role: 'quit',
+        },
+      ],
+    });
+  }
+
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 });
