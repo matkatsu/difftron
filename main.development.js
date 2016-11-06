@@ -66,9 +66,15 @@ app.on('ready', async () => {
           submenu: [
             {
               label: 'javascript',
+              click() {
+                mainWindow.webContents.send('set-language', 'javascript');
+              },
             },
             {
               label: 'html',
+              click() {
+                mainWindow.webContents.send('set-language', 'html');
+              },
             },
           ],
         },
@@ -76,10 +82,16 @@ app.on('ready', async () => {
           label: 'Theme',
           submenu: [
             {
-              label: 'theme1',
+              label: 'solarized_light',
+              click() {
+                mainWindow.webContents.send('set-theme', 'solarized_light');
+              },
             },
             {
-              label: 'theme2',
+              label: 'github',
+              click() {
+                mainWindow.webContents.send('set-theme', 'github');
+              },
             },
           ],
         },
@@ -88,9 +100,15 @@ app.on('ready', async () => {
           submenu: [
             {
               label: 'unified',
+              click() {
+                mainWindow.webContents.send('set-diff-format', 'unified');
+              },
             },
             {
               label: 'html',
+              click() {
+                mainWindow.webContents.send('set-diff-format', 'html');
+              },
             },
           ],
         },

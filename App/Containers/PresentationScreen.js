@@ -6,29 +6,46 @@ import InputRight from '../Components/InputRight';
 import DiffResult from '../Components/DiffResult';
 import Actions from '../Actions/Creators';
 
-const PresentationScreen = ({ changeLeft, changeRight, left, right, diff }) => (
+const PresentationScreen = props => (
   <SplitPane split="horizontal" defaultSize="60%">
     <SplitPane split="vertical" defaultSize="50%">
-      <InputLeft onChange={input => changeLeft(input)} value={left} />
-      <InputRight onChange={input => changeRight(input)} value={right} />
+      <InputLeft
+        onChange={input => props.changeLeft(input)}
+        value={props.left}
+        editorSettings={{ language: props.language, theme: props.theme, format: props.format }}
+      />
+      <InputRight
+        onChange={input => props.changeRight(input)}
+        value={props.right}
+        editorSettings={{ language: props.language, theme: props.theme, format: props.format }}
+      />
     </SplitPane>
-    <DiffResult value={diff} />
+    <DiffResult
+      value={props.contents}
+      editorSettings={{ language: props.language, theme: props.theme, format: props.format }}
+    />
   </SplitPane>
 );
 
 PresentationScreen.propTypes = {
-  changeLeft: PropTypes.func,
-  changeRight: PropTypes.func,
+  changeLeft: PropTypes.func.isRequired,
+  changeRight: PropTypes.func.isRequired,
   left: PropTypes.string,
   right: PropTypes.string,
-  diff: PropTypes.string,
+  language: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  contents: PropTypes.string,
+  format: PropTypes.string,
 };
 
 const mapStateToProps = state => (
   {
     left: state.input.left,
     right: state.input.right,
-    diff: state.output.diff,
+    language: state.input.language,
+    theme: state.input.theme,
+    contents: state.output.contents,
+    format: state.output.format,
   }
 );
 

@@ -1,3 +1,4 @@
+import { ipcRenderer } from 'electron';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -9,8 +10,21 @@ import './index.global.css';
 const store = configureStore();
 
 class App extends Component {
+
   componentWillMount() {
     const { dispatch } = store;
+
+    // ipcイベントリスナ
+    ipcRenderer.on('set-language', (event, arg) => {
+      dispatch(Actions.inputLanguageChange(arg));
+    });
+    ipcRenderer.on('set-theme', (event, arg) => {
+      dispatch(Actions.inputThemeChange(arg));
+    });
+    ipcRenderer.on('set-diff-format', (event, arg) => {
+      dispatch(Actions.outputFormatChange(arg));
+    });
+
     // 初期設定アクション
     dispatch(Actions.startup());
   }

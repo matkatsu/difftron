@@ -3,17 +3,33 @@ import immutable from 'seamless-immutable';
 import Types from '../Actions/Types';
 
 export const INITIAL_STATE = immutable({
-  diff: '',
+  raw: '',
+  contents: '',
+  format: 'html',
+  split: 'side-by-side',
 });
 
 const outputResult = (state, action) =>
   state.merge({
-    diff: action.diff,
+    raw: action.diff,
+    contents: action.contents,
+  });
+
+const changeFormat = (state, action) =>
+  state.merge({
+    format: action.format,
+  });
+
+const changeSplit = (state, action) =>
+  state.merge({
+    split: action.split,
   });
 
 // ActionハンドラとActionTypesをマッピング
 const ACTION_HANDLERS = {
   [Types.OUTPUT_DIFF_RESULT]: outputResult,
+  [Types.OUTPUT_FORMAT_CHANGE]: changeFormat,
+  [Types.OUTPUT_SPLIT_CHANGE]: changeSplit,
 };
 
 export default createReducer(INITIAL_STATE, ACTION_HANDLERS);
