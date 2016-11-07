@@ -38,3 +38,6 @@ export function* rightWatcher() {
 export function* formatWatcher() {
   yield* takeEvery(Types.OUTPUT_FORMAT_CHANGE, worker);
 }
+export function* splitWatcher() {
+  yield* takeEvery(Types.OUTPUT_SPLIT_CHANGE, worker);
+}

@@ -1,11 +1,12 @@
 import { fork } from 'redux-saga/effects';
 import startupSaga from './StartupSaga';
-import { leftWatcher, rightWatcher, formatWatcher } from './InputSaga';
+import * as input from './InputSaga';
 
 // start the daemons
 export default function* root() {
   yield fork(startupSaga);
-  yield fork(leftWatcher);
-  yield fork(rightWatcher);
-  yield fork(formatWatcher);
+  yield fork(input.leftWatcher);
+  yield fork(input.rightWatcher);
+  yield fork(input.formatWatcher);
+  yield fork(input.splitWatcher);
 }

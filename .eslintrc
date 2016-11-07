@@ -14,7 +14,9 @@
     "promise/catch-or-return": 2,
     "promise/no-native": 0,
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
-    "flowtype-errors/show-errors": 2
+    "flowtype-errors/show-errors": 2,
+    "react/no-unused-prop-types": ["error", { "skipShapeProps": true }],
+    "react/no-danger": 0,
   },
   "plugins": [
     "flowtype-errors",

@@ -22,7 +22,13 @@ const PresentationScreen = props => (
     </SplitPane>
     <DiffResult
       value={props.contents}
-      editorSettings={{ language: props.language, theme: props.theme, format: props.format }}
+      editorSettings={{
+        language: props.language,
+        theme: props.theme,
+        format: props.format,
+        split: props.split,
+      }}
+      handleSplitChange={e => props.changeSplit(e)}
     />
   </SplitPane>
 );
@@ -30,12 +36,14 @@ const PresentationScreen = props => (
 PresentationScreen.propTypes = {
   changeLeft: PropTypes.func.isRequired,
   changeRight: PropTypes.func.isRequired,
+  changeSplit: PropTypes.func.isRequired,
   left: PropTypes.string,
   right: PropTypes.string,
   language: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
   contents: PropTypes.string,
-  format: PropTypes.string,
+  format: PropTypes.string.isRequired,
+  split: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => (
@@ -46,6 +54,7 @@ const mapStateToProps = state => (
     theme: state.input.theme,
     contents: state.output.contents,
     format: state.output.format,
+    split: state.output.split,
   }
 );
 
@@ -53,6 +62,7 @@ const mapDispatchToProps = dispatch => (
   {
     changeLeft: input => dispatch(Actions.inputLeftChange(input)),
     changeRight: input => dispatch(Actions.inputRightChange(input)),
+    changeSplit: event => dispatch(Actions.outputSplitChange(event.target.value)),
   }
 );
 
