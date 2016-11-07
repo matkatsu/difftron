@@ -1,31 +1,18 @@
 import { put, select } from 'redux-saga/effects';
 import { takeEvery } from 'redux-saga';
-import { createPatch } from 'diff';
-import diff2html from 'diff2html';
 import { left, right } from '../Selectors/Input';
 import { format, split } from '../Selectors/Output';
 import Types from '../Actions/Types';
 import Actions from '../Actions/Creators';
+import createDiff from '../Services/CalculateDiff';
 
 function* worker() {
   // 現在のstateを取得
   const leftInput = yield select(left);
   const rightInput = yield select(right);
-  // diff計算
-  const rawDiff = createPatch('result', leftInput, rightInput, 'before', 'after');
-
-  let contents = '';
   const outputFormat = yield select(format);
   const outputSplit = yield select(split);
-
-  if (outputFormat === 'unified') {
-    contents = rawDiff;
-  } else {
-    // diff2html
-    const d2h = diff2html.Diff2Html;
-    const htmlString = d2h.getPrettyHtml(rawDiff, { outputFormat: outputSplit });
-    contents = htmlString;
-  }
+  const [rawDiff, contents] = createDiff(leftInput, rightInput, outputFormat, outputSplit);
   yield put(Actions.outputDiffResult(rawDiff, contents));
 }
 
