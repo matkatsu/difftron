@@ -1,11 +1,12 @@
 import { createReducer } from 'reduxsauce';
 import immutable from 'seamless-immutable';
 import Types from '../Actions/Types';
+import DIFF_FORMAT from '../Config/DiffFormat';
 
 export const INITIAL_STATE = immutable({
   raw: '',
   contents: '',
-  format: 'html',
+  format: DIFF_FORMAT.html,
   split: 'side-by-side',
 });
 

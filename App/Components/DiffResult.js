@@ -1,16 +1,12 @@
 import React, { PropTypes } from 'react';
-import brace from 'brace';
-import 'brace/mode/javascript';
-import 'brace/mode/html';
-import 'brace/theme/solarized_light';
-import 'brace/theme/github';
 import AceEditor from 'react-ace';
 import '../diff2html.global.css';
 import styles from './Styles/DiffResult.css';
+import DIFF_FORMAT from '../Config/DiffFormat';
 
 const DiffResult = ({ value, editorSettings, handleSplitChange }) => {
   let component;
-  if (editorSettings.format === 'html') {
+  if (editorSettings.format === DIFF_FORMAT.html) {
     component = (
       <div>
         <div className={styles.splitFormArea}>
@@ -45,7 +41,7 @@ DiffResult.propTypes = {
   editorSettings: PropTypes.shape({
     language: PropTypes.string.isRequired,
     theme: PropTypes.string.isRequired,
-    format: PropTypes.string.isRequired,
+    format: PropTypes.number.isRequired,
     split: PropTypes.string.isRequired,
   }),
   handleSplitChange: PropTypes.func.isRequired,

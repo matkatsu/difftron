@@ -6,7 +6,7 @@ export const INITIAL_STATE = immutable({
   left: '',
   right: '',
   language: 'javascript',
-  theme: 'solarized_light',
+  theme: 'github',
 });
 
 const changeLeft = (state, action) =>

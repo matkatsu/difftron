@@ -42,7 +42,7 @@ PresentationScreen.propTypes = {
   language: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
   contents: PropTypes.string,
-  format: PropTypes.string.isRequired,
+  format: PropTypes.number.isRequired,
   split: PropTypes.string.isRequired,
 };
 

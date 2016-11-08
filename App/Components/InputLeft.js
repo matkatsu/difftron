@@ -1,9 +1,4 @@
 import React, { PropTypes } from 'react';
-import brace from 'brace';
-import 'brace/mode/javascript';
-import 'brace/mode/html';
-import 'brace/theme/solarized_light';
-import 'brace/theme/github';
 import AceEditor from 'react-ace';
 
 const InputLeft = ({ onChange, value, editorSettings }) => (

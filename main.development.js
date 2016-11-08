@@ -1,4 +1,7 @@
 import { app, BrowserWindow, Menu, shell } from 'electron';
+import LANGUAGES from './App/Config/Language';
+import THEMES from './App/Config/Theme';
+import DIFF_FORMAT from './App/Config/DiffFormat';
 
 let mainWindow = null;
 
@@ -56,44 +59,86 @@ app.on('ready', async () => {
     mainWindow.webContents.openDevTools();
   }
 
+  // 言語サブメニュー
+  const makeLanguageSubMenu = (lang) => {
+    const menu = {
+      label: lang,
+      click() {
+        mainWindow.webContents.send('set-language', lang);
+      },
+    };
+    return menu;
+  };
+  const languageMenu = [];
+  for (const lang of LANGUAGES) {
+    languageMenu.push(makeLanguageSubMenu(lang));
+  }
+
+  // テーマサブメニュー
+  const makeThemeSubMenu = (theme) => {
+    const menu = {
+      label: theme,
+      click() {
+        mainWindow.webContents.send('set-theme', theme);
+      },
+    };
+    return menu;
+  };
+  const themeMenu = [];
+  for (const theme of THEMES) {
+    themeMenu.push(makeThemeSubMenu(theme));
+  }
+
   // menu
   const template = [
+    {
+      label: 'Edit',
+      submenu: [
+        {
+          label: 'Undo',
+          accelerator: 'CmdOrCtrl+Z',
+          role: 'undo',
+        },
+        {
+          label: 'Redo',
+          accelerator: 'Shift+CmdOrCtrl+Z',
+          role: 'redo',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          label: 'Cut',
+          accelerator: 'CmdOrCtrl+X',
+          role: 'cut',
+        },
+        {
+          label: 'Copy',
+          accelerator: 'CmdOrCtrl+C',
+          role: 'copy',
+        },
+        {
+          label: 'Paste',
+          accelerator: 'CmdOrCtrl+V',
+          role: 'paste',
+        },
+        {
+          label: 'Select All',
+          accelerator: 'CmdOrCtrl+A',
+          role: 'selectall',
+        },
+      ],
+    },
     {
       label: 'View',
       submenu: [
         {
           label: 'Language',
-          submenu: [
-            {
-              label: 'javascript',
-              click() {
-                mainWindow.webContents.send('set-language', 'javascript');
-              },
-            },
-            {
-              label: 'html',
-              click() {
-                mainWindow.webContents.send('set-language', 'html');
-              },
-            },
-          ],
+          submenu: languageMenu,
         },
         {
           label: 'Theme',
-          submenu: [
-            {
-              label: 'solarized_light',
-              click() {
-                mainWindow.webContents.send('set-theme', 'solarized_light');
-              },
-            },
-            {
-              label: 'github',
-              click() {
-                mainWindow.webContents.send('set-theme', 'github');
-              },
-            },
-          ],
+          submenu: themeMenu,
         },
         {
           label: 'DiffFormat',
@@ -101,13 +146,13 @@ app.on('ready', async () => {
             {
               label: 'unified',
               click() {
-                mainWindow.webContents.send('set-diff-format', 'unified');
+                mainWindow.webContents.send('set-diff-format', DIFF_FORMAT.unified);
               },
             },
             {
               label: 'html',
               click() {
-                mainWindow.webContents.send('set-diff-format', 'html');
+                mainWindow.webContents.send('set-diff-format', DIFF_FORMAT.html);
               },
             },
           ],
