@@ -8,7 +8,8 @@
     "hot-server": "cross-env NODE_ENV=development node -r babel-register server.js",
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main.development",
     "test": "ava",
-    "test:watch": "ava --watch"
+    "test:watch": "ava --watch",
+    "coverage": "nyc ava && nyc report --reporter=html && open coverage/index.html || xdg-open coverage/index.html"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,7 @@
     "eslint-plugin-react": "^6.4.1",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "nyc": "^10.0.0",
     "proxyquire": "^1.7.10",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
