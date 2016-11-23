@@ -2,7 +2,8 @@ import { createPatch } from 'diff';
 import diff2html from 'diff2html';
 import DIFF_FORMAT from '../Config/DiffFormat';
 
-export default function createDiff(left, right, format, split) {
+/* eslint-disable import/prefer-default-export*/
+export function createDiff(left, right, format, split) {
   const rawDiff = createPatch('result', left, right, 'before', 'after');
   let contents = '';
   if (format === DIFF_FORMAT.unified) {

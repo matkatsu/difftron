@@ -4,12 +4,12 @@ import { left, right } from '../Selectors/Input';
 import { format, split } from '../Selectors/Output';
 import Types from '../Actions/Types';
 import Actions from '../Actions/Creators';
-import createDiff from '../Services/CalculateDiff';
+import { createDiff } from '../Services/CalculateDiff';
 
 // 間引き時間
 // const debouncing = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-function* worker() {
+export function* worker() {
   // Debouncing（間引き）処理
   // yield call(debouncing, 1000);
 

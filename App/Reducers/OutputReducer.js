@@ -7,12 +7,12 @@ export const INITIAL_STATE = immutable({
   raw: '',
   contents: '',
   format: DIFF_FORMAT.html,
-  split: 'side-by-side',
+  split: 'line-by-line',
 });
 
 const outputResult = (state, action) =>
   state.merge({
-    raw: action.diff,
+    raw: action.raw,
     contents: action.contents,
   });
 

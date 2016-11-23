@@ -7,7 +7,8 @@
     "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
     "hot-server": "cross-env NODE_ENV=development node -r babel-register server.js",
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main.development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava",
+    "test:watch": "ava --watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/romiogaku/difftron#readme",
   "devDependencies": {
+    "ava": "^0.17.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
@@ -55,6 +57,7 @@
     "eslint-plugin-react": "^6.4.1",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "proxyquire": "^1.7.10",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.4",
@@ -77,5 +80,16 @@
     "redux-saga": "^0.12.1",
     "reduxsauce": "^0.2.0",
     "seamless-immutable": "^6.3.0"
+  },
+  "ava": {
+    "files": [
+      "Tests/**/*.js",
+      "!Tests/Setup.js"
+    ],
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit"
   }
 }

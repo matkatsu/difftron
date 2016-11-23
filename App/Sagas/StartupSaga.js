@@ -7,7 +7,6 @@ import THEMES from '../Config/Theme';
 export default function* watcher() {
   yield take(Types.STARTUP);
   // マウント前に設定するものがあればここに記述
-  console.log('startup');
 
   /* eslint-disable global-require */
   /* eslint-disable import/no-dynamic-require */
