@@ -1,12 +1,14 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { autoRehydrate } from 'redux-persist';
 import rootReducer from '../Reducers/';
 import sagas from '../Sagas/';
 import persistTransform from '../Services/ImmutablePersistenceTransform';
+import Reactotron from '../Config/Reactotron';
 
 const middleware = [];
-const sagaMiddleware = createSagaMiddleware();
+const sagaMonitor = Reactotron.createSagaMonitor();
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 middleware.push(sagaMiddleware);
 
 const enhancers = [];
@@ -17,7 +19,7 @@ export default () => {
   enhancers.push(autoRehydrate());
 
   // Store生成
-  const store = createStore(rootReducer, compose(...enhancers));
+  const store = Reactotron.createStore(rootReducer, compose(...enhancers));
   // state永続化設定
   persistTransform(store);
 
