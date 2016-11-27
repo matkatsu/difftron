@@ -1,4 +1,4 @@
 ## diff tool
 
 ### 開発
-npm run dev
+yarn run dev
