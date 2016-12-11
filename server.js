@@ -2,7 +2,6 @@
 /**
  * Setup and run the development server for Hot-Module-Replacement
  * https://webpack.github.io/docs/hot-module-replacement-with-webpack.html
- * @flow
  */
 
 import express from 'express';
@@ -19,8 +18,8 @@ const PORT = process.env.PORT || 3000;
 const wdm = webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
   stats: {
-    colors: true
-  }
+    colors: true,
+  },
 });
 
 app.use(wdm);

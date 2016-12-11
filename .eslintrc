@@ -1,6 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
   "env": {
     "browser": true,
     "mocha": true,
@@ -19,12 +22,16 @@
     "react/no-danger": 0,
   },
   "plugins": [
+    "flowtype",
     "flowtype-errors",
     "import",
     "promise",
     "react"
   ],
   "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    },
     "import/resolver": {
       "webpack": {
         "config": "webpack.config.eslint.js"
