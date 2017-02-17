@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import { autoRehydrate } from 'redux-persist';
 import rootReducer from '../Reducers/';
 import sagas from '../Sagas/';
-import persistTransform from '../Services/ImmutablePersistenceTransform';
+import persistTransform from '../Utils/ImmutablePersistenceTransform';
 
 const middleware = [];
 const sagaMiddleware = createSagaMiddleware();

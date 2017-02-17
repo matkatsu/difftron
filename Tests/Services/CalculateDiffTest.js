@@ -8,7 +8,7 @@ test('createDiff() フォーマットがunifiedならコンテンツはunified�
       return 'rawDiff';
     },
   };
-  const createDiffMock = proxyquire('../../App/Services/CalculateDiff', {
+  const createDiffMock = proxyquire('../../App/Utils/CalculateDiff', {
     diff: diffStub,
   });
   const expected = ['rawDiff', 'rawDiff'];
@@ -28,7 +28,7 @@ test('createDiff() フォーマットがhtmlならコンテンツはhtml変換�
       },
     },
   };
-  const createDiffMock = proxyquire('../../App/Services/CalculateDiff', {
+  const createDiffMock = proxyquire('../../App/Utils/CalculateDiff', {
     diff: diffStub,
     diff2html: diff2htmlStub,
   });

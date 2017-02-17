@@ -3,7 +3,7 @@ import { left, right } from '../Selectors/Input';
 import { format, split } from '../Selectors/Output';
 import Types from '../Actions/Types';
 import Actions from '../Actions/Creators';
-import { createDiff } from '../Services/CalculateDiff';
+import { createDiff } from '../Utils/CalculateDiff';
 
 // 間引き時間
 // const debouncing = ms => new Promise(resolve => setTimeout(resolve, ms));
