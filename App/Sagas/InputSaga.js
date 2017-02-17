@@ -1,5 +1,4 @@
-import { put, select } from 'redux-saga/effects';
-import { takeEvery } from 'redux-saga';
+import { put, select, takeEvery } from 'redux-saga/effects';
 import { left, right } from '../Selectors/Input';
 import { format, split } from '../Selectors/Output';
 import Types from '../Actions/Types';
@@ -33,14 +32,14 @@ export function* leftWatcher() {
     task = yield fork(worker);
   }
   */
-  yield* takeEvery(Types.INPUT_LEFT_CHANGE, worker);
+  yield takeEvery(Types.INPUT_LEFT_CHANGE, worker);
 }
 export function* rightWatcher() {
-  yield* takeEvery(Types.INPUT_RIGHT_CHANGE, worker);
+  yield takeEvery(Types.INPUT_RIGHT_CHANGE, worker);
 }
 export function* formatWatcher() {
-  yield* takeEvery(Types.OUTPUT_FORMAT_CHANGE, worker);
+  yield takeEvery(Types.OUTPUT_FORMAT_CHANGE, worker);
 }
 export function* splitWatcher() {
-  yield* takeEvery(Types.OUTPUT_SPLIT_CHANGE, worker);
+  yield takeEvery(Types.OUTPUT_SPLIT_CHANGE, worker);
 }

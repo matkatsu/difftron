@@ -86,21 +86,21 @@
     "webpack-validator": "^2.2.9"
   },
   "dependencies": {
-    "diff": "^3.0.1",
-    "diff2html": "^2.0.10",
-    "electron-debug": "^1.0.1",
+    "diff": "^3.2.0",
+    "diff2html": "^2.0.12",
+    "electron-debug": "^1.1.0",
     "localforage": "^1.4.3",
-    "react": "^15.3.2",
-    "react-ace": "^3.6.1",
-    "react-dom": "^15.3.2",
-    "react-redux": "^4.4.5",
-    "react-split-pane": "^0.1.52",
+    "react": "^15.4.2",
+    "react-ace": "^4.1.5",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-split-pane": "^0.1.57",
     "redux": "^3.6.0",
-    "redux-persist": "^3.5.0",
-    "redux-saga": "^0.12.1",
-    "reduxsauce": "^0.2.0",
-    "seamless-immutable": "^6.3.0",
-    "source-map-support": "^0.4.6"
+    "redux-persist": "^4.4.0",
+    "redux-saga": "^0.14.3",
+    "reduxsauce": "^0.4.1",
+    "seamless-immutable": "^7.0.1",
+    "source-map-support": "^0.4.11"
   },
   "ava": {
     "files": [
