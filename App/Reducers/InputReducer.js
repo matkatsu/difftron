@@ -1,41 +1,46 @@
+// @flow
 import { createReducer } from 'reduxsauce';
-import immutable from 'seamless-immutable';
-import Types from '../Actions/Types';
+import I from 'seamless-immutable';
+import type { Immutable } from 'seamless-immutable';
+import ActionTypes from '../Actions/Types';
+import type { Input, A_INPUT_LEFT_CHANGE, A_INPUT_RIGHT_CHANGE, A_INPUT_LANGUAGE_CHANGE, A_INPUT_THEME_CHANGE } from '../Types';
 
-export const INITIAL_STATE = immutable({
+// 入力State初期値
+const initialState: Input = {
   left: '',
   right: '',
   language: 'javascript',
   theme: 'github',
-});
+};
 
-const changeLeft = (state, action) =>
+export const INITIAL_STATE: Immutable<Input> = I.from(initialState);
+
+const changeLeft = (state: Immutable<Input>, action: A_INPUT_LEFT_CHANGE) =>
   state.merge({
     left: action.input,
   });
 
-const changeRight = (state, action) =>
+const changeRight = (state: Immutable<Input>, action: A_INPUT_RIGHT_CHANGE) =>
   state.merge({
     right: action.input,
   });
 
-const changeLanguage = (state, action) =>
+const changeLanguage = (state: Immutable<Input>, action: A_INPUT_LANGUAGE_CHANGE) =>
   state.merge({
     language: action.language,
   });
 
-const changeTheme = (state, action) =>
+const changeTheme = (state: Immutable<Input>, action: A_INPUT_THEME_CHANGE) =>
   state.merge({
     theme: action.theme,
   });
 
-
 // ActionハンドラとActionTypesをマッピング
 const ACTION_HANDLERS = {
-  [Types.INPUT_LEFT_CHANGE]: changeLeft,
-  [Types.INPUT_RIGHT_CHANGE]: changeRight,
-  [Types.INPUT_LANGUAGE_CHANGE]: changeLanguage,
-  [Types.INPUT_THEME_CHANGE]: changeTheme,
+  [ActionTypes.INPUT_LEFT_CHANGE]: changeLeft,
+  [ActionTypes.INPUT_RIGHT_CHANGE]: changeRight,
+  [ActionTypes.INPUT_LANGUAGE_CHANGE]: changeLanguage,
+  [ActionTypes.INPUT_THEME_CHANGE]: changeTheme,
 };
 
 export default createReducer(INITIAL_STATE, ACTION_HANDLERS);

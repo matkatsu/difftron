@@ -1,18 +1,36 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React from 'react';
 import AceEditor from 'react-ace';
 import '../diff2html.global.css';
 import styles from './Styles/DiffResult.css';
 import DIFF_FORMAT from '../Config/DiffFormat';
+import type { Contents, InputLanguage, InputTheme, OutputFormat, OutputSplit } from '../Types';
 
-const DiffResult = ({ value, editorSettings, handleSplitChange }) => {
+type EditorSettings = {
+  format: OutputFormat,
+  split: OutputSplit,
+  language: InputLanguage,
+  theme: InputTheme,
+}
+
+type Props = {
+  value: Contents,
+  editorSettings: EditorSettings,
+  handleSplitChange: (split: OutputSplit) => void
+};
+
+const lineByLine: OutputSplit = 'line-by-line';
+const sideBySide: OutputSplit = 'side-by-side';
+
+const DiffResult = ({ value, editorSettings, handleSplitChange }: Props) => {
   let component;
   if (editorSettings.format === DIFF_FORMAT.html) {
     component = (
       <div>
         <div className={styles.splitFormArea}>
           <select value={editorSettings.split} onChange={handleSplitChange}>
-            <option value="line-by-line">Line by Line</option>
-            <option value="side-by-side">Side by Side</option>
+            <option value={lineByLine}>Line by Line</option>
+            <option value={sideBySide}>Side by Side</option>
           </select>
         </div>
         <div dangerouslySetInnerHTML={{ __html: value }} />
@@ -34,17 +52,6 @@ const DiffResult = ({ value, editorSettings, handleSplitChange }) => {
     );
   }
   return component;
-};
-
-DiffResult.propTypes = {
-  value: PropTypes.string,
-  editorSettings: PropTypes.shape({
-    language: PropTypes.string.isRequired,
-    theme: PropTypes.string.isRequired,
-    format: PropTypes.number.isRequired,
-    split: PropTypes.string.isRequired,
-  }),
-  handleSplitChange: PropTypes.func.isRequired,
 };
 
 export default DiffResult;

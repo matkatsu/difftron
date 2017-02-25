@@ -1,8 +1,10 @@
-import immutable from 'seamless-immutable';
+// @flow
+import I from 'seamless-immutable';
 import localForage from 'localforage';
 import { createTransform, persistStore } from 'redux-persist';
+import type { Store } from '../Types';
 
-export default function (store) {
+export default function (store: Store) {
   const myTransform = createTransform(
     (inState) => {
       // storageへ保存する際のtransform
@@ -16,8 +18,8 @@ export default function (store) {
       // mergeDeepプロパティに空の関数をセットする
       // https://github.com/rt2zz/redux-persist/blob/v3.5.0/src/autoRehydrate.js#L42
       /* eslint-disable no-param-reassign */
-      outState.mergeDeep = () => {};
-      return immutable(outState);
+      outState.mergeDeep = () => { };
+      return I.from(outState);
     },
   );
   persistStore(store, { storage: localForage, transforms: [myTransform] });

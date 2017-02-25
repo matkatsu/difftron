@@ -1,3 +1,4 @@
+// @flow
 import { ipcRenderer } from 'electron';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
@@ -40,5 +41,5 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

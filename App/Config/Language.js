@@ -1,4 +1,7 @@
-const LANGUAGES = [
+// @flow
+import type { InputLanguage } from '../Types';
+
+const LANGUAGES: Array<InputLanguage> = [
   'javascript',
   'java',
   'python',

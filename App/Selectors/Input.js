@@ -1,4 +1,7 @@
-export const left = state => state.input.left;
-export const right = state => state.input.right;
-export const language = state => state.input.language;
-export const theme = state => state.input.theme;
+// @flow
+import type { State } from '../Types';
+
+export const left = (state: State) => state.input.left;
+export const right = (state: State) => state.input.right;
+export const language = (state: State) => state.input.language;
+export const theme = (state: State) => state.input.theme;

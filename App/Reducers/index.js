@@ -1,3 +1,4 @@
+// @flow
 import { combineReducers } from 'redux';
 import InputReducer from './InputReducer';
 import OutputReducer from './OutputReducer';

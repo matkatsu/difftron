@@ -10,15 +10,30 @@
     "node": true
   },
   "rules": {
-    "import/no-unresolved": ["error", { "ignore": ["electron"] }],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "electron"
+        ]
+      }
+    ],
     "import/no-extraneous-dependencies": "off",
     "promise/param-names": 2,
     "promise/always-return": 2,
     "promise/catch-or-return": 2,
     "promise/no-native": 0,
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "flowtype-errors/show-errors": 2,
-    "react/no-unused-prop-types": ["error", { "skipShapeProps": true }],
+    "react/no-unused-prop-types": 0,
     "react/no-danger": 0,
   },
   "plugins": [
