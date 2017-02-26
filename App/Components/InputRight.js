@@ -19,7 +19,7 @@ const InputRight = ({ onChange, value, editorSettings }: Props) => (
     mode={editorSettings.language}
     theme={editorSettings.theme}
     onChange={onChange}
-    name="LEFT_INPUT"
+    name="RIGHT_INPUT"
     width="100%"
     height="100%"
     value={value}

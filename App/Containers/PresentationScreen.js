@@ -22,7 +22,7 @@ type Props = {
   split: OutputSplit,
 };
 
-const PresentationScreen = (props: Props) => (
+export const PresentationScreen = (props: Props) => (
   <SplitPane split="horizontal" defaultSize="60%">
     <SplitPane split="vertical" defaultSize="50%">
       <InputLeft
