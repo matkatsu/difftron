@@ -1,12 +1,25 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React from 'react';
 import AceEditor from 'react-ace';
+import type { Left, Language, Theme } from 'Types/State';
 
-const InputLeft = ({ onChange, value, editorSettings }) => (
+type EditorSettings = {
+  language: Language,
+  theme: Theme,
+};
+
+type Props = {
+  onChange: (input: Left) => void,
+  value: Left,
+  editorSettings: EditorSettings,
+};
+
+const InputLeft = ({ onChange, value, editorSettings }: Props) => (
   <AceEditor
     mode={editorSettings.language}
     theme={editorSettings.theme}
     onChange={onChange}
-    name="RIGHT_INPUT"
+    name="LEFT_INPUT"
     width="100%"
     height="100%"
     value={value}
@@ -14,14 +27,5 @@ const InputLeft = ({ onChange, value, editorSettings }) => (
     editorProps={{ $blockScrolling: true }}
   />
 );
-
-InputLeft.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string,
-  editorSettings: PropTypes.shape({
-    language: PropTypes.string.isRequired,
-    theme: PropTypes.string.isRequired,
-  }),
-};
 
 export default InputLeft;

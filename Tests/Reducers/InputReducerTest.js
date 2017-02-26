@@ -1,6 +1,6 @@
 import test from 'ava';
-import reducer, { INITIAL_STATE } from '../../App/Reducers/InputReducer';
-import Actions from '../../App/Actions/Creators';
+import reducer, { INITIAL_STATE } from 'Reducers/InputReducer';
+import Actions from 'Actions/Creators';
 
 test('changeLeft', (t) => {
   const input = 'New Text';

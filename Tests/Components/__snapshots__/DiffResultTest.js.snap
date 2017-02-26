@@ -1,0 +1,5 @@
+exports[`DiffResult component 1`] = `"{"__ava_react_jsx":{"type":"div","props":{"id":"DIFF_RESULT","style":{"width":"100%","height":"100%"}},"children":null}}"`;
+
+exports[`DiffResult component html 1`] = `"{\"__ava_react_jsx\":{\"type\":\"div\",\"props\":{},\"children\":[{\"type\":\"div\",\"props\":{},\"children\":[{\"type\":\"select\",\"props\":{\"value\":\"side-by-side\"},\"children\":[{\"type\":\"option\",\"props\":{\"value\":\"line-by-line\"},\"children\":[\"Line by Line\"]},{\"type\":\"option\",\"props\":{\"value\":\"side-by-side\"},\"children\":[\"Side by Side\"]}]}]},{\"type\":\"div\",\"props\":{\"dangerouslySetInnerHTML\":{\"__html\":\"result contents\"}},\"children\":null}]}}"`;
+
+exports[`DiffResult component unified 1`] = `"{\"__ava_react_jsx\":{\"type\":\"div\",\"props\":{\"id\":\"DIFF_RESULT\",\"style\":{\"width\":\"100%\",\"height\":\"100%\"}},\"children\":null}}"`;

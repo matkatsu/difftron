@@ -1,11 +1,12 @@
+// @flow
 import { ipcRenderer } from 'electron';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import configureStore from './Stores/Store';
-import PresentationScreen from './Containers/PresentationScreen';
-import Actions from './Actions/Creators';
-import './index.global.css';
+import configureStore from 'Stores/Store';
+import ConnectedPresentationScreen from 'Containers/PresentationScreen';
+import Actions from 'Actions/Creators';
+import 'index.global.css';
 
 const store = configureStore();
 
@@ -31,7 +32,7 @@ class App extends Component {
 
   render() {
     return (
-      <PresentationScreen />
+      <ConnectedPresentationScreen />
     );
   }
 }
@@ -40,5 +41,5 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

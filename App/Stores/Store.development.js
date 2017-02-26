@@ -1,10 +1,11 @@
+// @flow
 import { applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { autoRehydrate } from 'redux-persist';
-import rootReducer from '../Reducers/';
-import sagas from '../Sagas/';
-import persistTransform from '../Services/ImmutablePersistenceTransform';
-import Reactotron from '../Config/Reactotron';
+import rootReducer from 'Reducers/';
+import sagas from 'Sagas/';
+import persistTransform from 'Utils/ImmutablePersistenceTransform';
+import Reactotron from 'Config/Reactotron';
 
 const middleware = [];
 const sagaMonitor = Reactotron.createSagaMonitor();
