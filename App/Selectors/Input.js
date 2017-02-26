@@ -1,5 +1,5 @@
 // @flow
-import type { State } from 'Types';
+import type { State } from 'Types/State';
 
 export const left = (state: State) => state.input.left;
 export const right = (state: State) => state.input.right;

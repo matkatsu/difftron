@@ -7,7 +7,8 @@ import InputLeft from 'Components/InputLeft';
 import InputRight from 'Components/InputRight';
 import DiffResult from 'Components/DiffResult';
 import Actions from 'Actions/Creators';
-import type { State, Left, Right, InputLanguage, InputTheme, OutputFormat, OutputSplit, Contents, Dispatch } from 'Types';
+import type { State, Left, Right, Language, Theme, Format, Split, Contents } from 'Types/State';
+import type { Dispatch } from 'Types';
 
 type Props = {
   changeLeft: (input: Left) => void,
@@ -15,11 +16,11 @@ type Props = {
   changeSplit: (event: any) => void,
   left: Left,
   right: Right,
-  language: InputLanguage,
-  theme: InputTheme,
+  language: Language,
+  theme: Theme,
   contents: Contents,
-  format: OutputFormat,
-  split: OutputSplit,
+  format: Format,
+  split: Split,
 };
 
 export const PresentationScreen = (props: Props) => (

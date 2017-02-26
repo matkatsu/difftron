@@ -1,7 +1,7 @@
 // @flow
-import type { InputLanguage } from 'Types';
+import type { Language } from 'Types/State';
 
-const LANGUAGES: Array<InputLanguage> = [
+const LANGUAGES: Array<Language> = [
   'javascript',
   'java',
   'python',

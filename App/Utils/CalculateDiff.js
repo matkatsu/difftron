@@ -2,10 +2,10 @@
 import { createPatch } from 'diff';
 import diff2html from 'diff2html';
 import DIFF_FORMAT from 'Config/DiffFormat';
-import type { Left, Right, OutputFormat, OutputSplit } from 'Types';
+import type { Left, Right, Format, Split } from 'Types/State';
 
 /* eslint-disable import/prefer-default-export, max-len*/
-export function createDiff(left: Left, right: Right, format: OutputFormat, split: OutputSplit): Array<string> {
+export function createDiff(left: Left, right: Right, format: Format, split: Split): Array<string> {
   const rawDiff: string = createPatch('result', left, right, 'before', 'after');
   let contents: string = '';
   if (format === DIFF_FORMAT.unified) {

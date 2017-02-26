@@ -4,23 +4,23 @@ import AceEditor from 'react-ace';
 import 'diff2html.global.css';
 import styles from 'Components/Styles/DiffResult.css';
 import DIFF_FORMAT from 'Config/DiffFormat';
-import type { Contents, InputLanguage, InputTheme, OutputFormat, OutputSplit } from 'Types';
+import type { Contents, Language, Theme, Format, Split } from 'Types/State';
 
 type EditorSettings = {
-  format: OutputFormat,
-  split: OutputSplit,
-  language: InputLanguage,
-  theme: InputTheme,
+  format: Format,
+  split: Split,
+  language: Language,
+  theme: Theme,
 }
 
 type Props = {
   value: Contents,
   editorSettings: EditorSettings,
-  handleSplitChange: (split: OutputSplit) => void
+  handleSplitChange: (split: Split) => void
 };
 
-const lineByLine: OutputSplit = 'line-by-line';
-const sideBySide: OutputSplit = 'side-by-side';
+const lineByLine: Split = 'line-by-line';
+const sideBySide: Split = 'side-by-side';
 
 const DiffResult = ({ value, editorSettings, handleSplitChange }: Props) => {
   let component;

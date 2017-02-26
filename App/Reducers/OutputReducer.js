@@ -3,7 +3,8 @@ import { createReducer } from 'reduxsauce';
 import I from 'seamless-immutable';
 import type { Immutable } from 'seamless-immutable';
 import ActionTypes from 'Actions/Types';
-import type { Output, A_OUTPUT_DIFF_RESULT, A_OUTPUT_FORMAT_CHANGE, A_OUTPUT_SPLIT_CHANGE } from 'Types';
+import type { Output } from 'Types/State';
+import type { A_OUTPUT_DIFF_RESULT, A_OUTPUT_FORMAT_CHANGE, A_OUTPUT_SPLIT_CHANGE } from 'Types/Action';
 import DIFF_FORMAT from 'Config/DiffFormat';
 
 // 入力State初期値

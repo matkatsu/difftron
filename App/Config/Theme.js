@@ -1,7 +1,7 @@
 // @flow
-import type { InputTheme } from 'Types';
+import type { Theme } from 'Types/State';
 
-const THEMES: Array<InputTheme> = [
+const THEMES: Array<Theme> = [
   'monokai',
   'github',
   'tomorrow',

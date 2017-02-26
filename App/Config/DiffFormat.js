@@ -1,9 +1,9 @@
 // @flow
-import type { OutputFormat } from 'Types';
+import type { Format } from 'Types/State';
 
 type diffFormat = {
-  unified: OutputFormat,
-  html: OutputFormat
+  unified: Format,
+  html: Format
 }
 
 const DIFF_FORMAT: diffFormat = {

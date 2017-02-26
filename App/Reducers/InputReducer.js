@@ -3,7 +3,8 @@ import { createReducer } from 'reduxsauce';
 import I from 'seamless-immutable';
 import type { Immutable } from 'seamless-immutable';
 import ActionTypes from 'Actions/Types';
-import type { Input, A_INPUT_LEFT_CHANGE, A_INPUT_RIGHT_CHANGE, A_INPUT_LANGUAGE_CHANGE, A_INPUT_THEME_CHANGE } from 'Types';
+import type { Input } from 'Types/State';
+import type { A_INPUT_LEFT_CHANGE, A_INPUT_RIGHT_CHANGE, A_INPUT_LANGUAGE_CHANGE, A_INPUT_THEME_CHANGE } from 'Types/Action';
 
 // 入力State初期値
 const initialState: Input = {
