@@ -82,6 +82,7 @@
     "minimist": "^1.2.0",
     "nyc": "^10.1.2",
     "proxyquire": "^1.7.11",
+    "rcedit": "^0.7.0",
     "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.4.2",
     "reactotron-react-js": "^1.7.0",
