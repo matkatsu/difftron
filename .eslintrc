@@ -2,7 +2,8 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:ava/recommended"
   ],
   "env": {
     "browser": true,
@@ -41,7 +42,8 @@
     "flowtype-errors",
     "import",
     "promise",
-    "react"
+    "react",
+    "ava"
   ],
   "settings": {
     "flowtype": {
