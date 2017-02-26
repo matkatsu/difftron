@@ -1,5 +1,5 @@
 // @flow
-import type { ActionType } from '../Types';
+import type { ActionType } from 'Types';
 
 const STARTUP: ActionType = 'STARTUP';
 const INPUT_LEFT_CHANGE: ActionType = 'INPUT_LEFT_CHANGE';

@@ -3,11 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import SplitPane from 'react-split-pane';
-import InputLeft from '../Components/InputLeft';
-import InputRight from '../Components/InputRight';
-import DiffResult from '../Components/DiffResult';
-import Actions from '../Actions/Creators';
-import type { State, Left, Right, InputLanguage, InputTheme, OutputFormat, OutputSplit, Contents, Dispatch } from '../Types';
+import InputLeft from 'Components/InputLeft';
+import InputRight from 'Components/InputRight';
+import DiffResult from 'Components/DiffResult';
+import Actions from 'Actions/Creators';
+import type { State, Left, Right, InputLanguage, InputTheme, OutputFormat, OutputSplit, Contents, Dispatch } from 'Types';
 
 type Props = {
   changeLeft: (input: Left) => void,

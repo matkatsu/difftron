@@ -1,5 +1,5 @@
 // @flow
-import type { OutputFormat } from '../Types';
+import type { OutputFormat } from 'Types';
 
 type diffFormat = {
   unified: OutputFormat,

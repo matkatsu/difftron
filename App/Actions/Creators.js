@@ -1,6 +1,5 @@
 // @flow
-
-import type { Left, Right, InputLanguage, InputTheme, Raw, Contents, OutputFormat, OutputSplit, Action } from '../Types';
+import type { Left, Right, InputLanguage, InputTheme, Raw, Contents, OutputFormat, OutputSplit, Action } from 'Types';
 
 // 起動時設定
 const startup = (): Action => ({ type: 'STARTUP' });

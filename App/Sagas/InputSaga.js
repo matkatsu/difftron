@@ -1,9 +1,9 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
-import { left, right } from '../Selectors/Input';
-import { format, split } from '../Selectors/Output';
-import ActionTypes from '../Actions/Types';
-import Actions from '../Actions/Creators';
-import { createDiff } from '../Utils/CalculateDiff';
+import { left, right } from 'Selectors/Input';
+import { format, split } from 'Selectors/Output';
+import ActionTypes from 'Actions/Types';
+import Actions from 'Actions/Creators';
+import { createDiff } from 'Utils/CalculateDiff';
 
 // 間引き時間
 // const debouncing = ms => new Promise(resolve => setTimeout(resolve, ms));

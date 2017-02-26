@@ -26,7 +26,7 @@ import 'brace/theme/solarized_light';
 import 'brace/theme/terminal';
 
 import { take } from 'redux-saga/effects';
-import ActionTypes from '../Actions/Types';
+import ActionTypes from 'Actions/Types';
 
 export default function* watcher() {
   yield take(ActionTypes.STARTUP);

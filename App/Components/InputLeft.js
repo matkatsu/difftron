@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import AceEditor from 'react-ace';
-import type { Left, InputLanguage, InputTheme } from '../Types';
+import type { Left, InputLanguage, InputTheme } from 'Types';
 
 type EditorSettings = {
   language: InputLanguage,

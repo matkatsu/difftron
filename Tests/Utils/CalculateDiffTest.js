@@ -1,6 +1,6 @@
 import test from 'ava';
 import proxyquire from 'proxyquire';
-import DIFF_FORMAT from '../../App/Config/DiffFormat';
+import DIFF_FORMAT from 'Config/DiffFormat';
 
 test('createDiff() フォーマットがunifiedならコンテンツはunified生データが返却される', (t) => {
   const diffStub = {

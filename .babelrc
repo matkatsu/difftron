@@ -15,6 +15,16 @@
       }
     ]
   ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./App"
+        ]
+      }
+    ]
+  ],
   "env": {
     "production": {
       "presets": [

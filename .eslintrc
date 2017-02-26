@@ -50,6 +50,7 @@
       "onlyFilesWithFlowAnnotation": true
     },
     "import/resolver": {
+      "babel-module": {},
       "webpack": {
         "config": "webpack.config.eslint.js"
       }

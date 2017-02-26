@@ -1,5 +1,5 @@
 import test from 'ava';
-import Actions from '../../App/Actions/Creators';
+import Actions from 'Actions/Creators';
 
 test('startup Action', (t) => {
   t.deepEqual(Actions.startup(), { type: 'STARTUP' });

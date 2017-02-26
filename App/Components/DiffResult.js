@@ -1,10 +1,10 @@
 // @flow
 import React from 'react';
 import AceEditor from 'react-ace';
-import '../diff2html.global.css';
-import styles from './Styles/DiffResult.css';
-import DIFF_FORMAT from '../Config/DiffFormat';
-import type { Contents, InputLanguage, InputTheme, OutputFormat, OutputSplit } from '../Types';
+import 'diff2html.global.css';
+import styles from 'Components/Styles/DiffResult.css';
+import DIFF_FORMAT from 'Config/DiffFormat';
+import type { Contents, InputLanguage, InputTheme, OutputFormat, OutputSplit } from 'Types';
 
 type EditorSettings = {
   format: OutputFormat,

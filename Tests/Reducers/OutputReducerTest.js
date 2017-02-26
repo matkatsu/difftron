@@ -1,6 +1,6 @@
 import test from 'ava';
-import reducer, { INITIAL_STATE } from '../../App/Reducers/OutputReducer';
-import Actions from '../../App/Actions/Creators';
+import reducer, { INITIAL_STATE } from 'Reducers/OutputReducer';
+import Actions from 'Actions/Creators';
 
 test('outputResult', (t) => {
   const raw = 'raw output';

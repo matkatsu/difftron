@@ -1,5 +1,5 @@
 // @flow
-import type { InputTheme } from '../Types';
+import type { InputTheme } from 'Types';
 
 const THEMES: Array<InputTheme> = [
   'monokai',

@@ -2,7 +2,7 @@
 import I from 'seamless-immutable';
 import localForage from 'localforage';
 import { createTransform, persistStore } from 'redux-persist';
-import type { Store } from '../Types';
+import type { Store } from 'Types';
 
 export default function (store: Store) {
   const myTransform = createTransform(

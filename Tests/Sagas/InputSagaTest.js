@@ -1,8 +1,8 @@
 import test from 'ava';
 import { select } from 'redux-saga/effects';
-import { left, right } from '../../App/Selectors/Input';
-import { format, split } from '../../App/Selectors/Output';
-import { worker } from '../../App/Sagas/InputSaga';
+import { left, right } from 'Selectors/Input';
+import { format, split } from 'Selectors/Output';
+import { worker } from 'Sagas/InputSaga';
 
 // 呼び出すたびにGeneratorのstepを1つ進める
 const stepper = fn => mock => fn.next(mock).value;
