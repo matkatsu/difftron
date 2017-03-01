@@ -9,6 +9,7 @@
     "hot-server": "cross-env NODE_ENV=development node -r babel-register server.js",
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main.development",
     "test": "ava",
+    "test:update": "ava --update-snapshots",
     "lint": "eslint App/ Tests/",
     "test:watch": "ava --watch",
     "coverage": "nyc ava && nyc report --reporter=html && open coverage/index.html || xdg-open coverage/index.html",
